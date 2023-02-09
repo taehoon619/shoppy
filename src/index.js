@@ -9,8 +9,8 @@ import ProductDetail from './pages/ProductDetail';
 import NewProduct from './pages/NewProduct';
 import MyCart from './pages/MyCart';
 import NotFound from './pages/NotFound';
-import reportWebVitals from './reportWebVitals';
 import ProtectedRoute from './pages/ProtectedRoute';
+import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       { path: '/products', element: <AllProducts /> },
       {
-        path: '/product/new',
+        path: '/products/new',
         element: (
           <ProtectedRoute requireAdmin>
             <NewProduct />
