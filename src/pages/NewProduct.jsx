@@ -5,7 +5,8 @@ import Button from '../components/ui/Button';
 export default function NewProduct() {
   const [product, setProduct] = useState({});
   const [file, setFile] = useState();
-  const handleSubmit = (e) => {
+
+  const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === 'file') {
       setFile(files && files[0]);
@@ -13,11 +14,11 @@ export default function NewProduct() {
     }
     setProduct((product) => ({ ...product, [name]: value }));
   };
-  const handleChange = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     uploadImage(file).then((url) => {
       console.log(url);
-      // return;
+      return;
     });
   };
 
